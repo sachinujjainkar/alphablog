@@ -10,16 +10,13 @@
   </head>
 
   <body>
-  <%flash.each do |name,msg|%>
-  <ul>
-    <li>
-      <%=msg %>
-    </li>
-  </ul>
 
-  <%end%>
+  <%=render 'layouts/navigation'%>  
+  <%=render 'articles/message'%>
 
-
+ <div class="container">
     <%= yield %>
+  </div> 
+  <%= render 'layouts/footer'%>
   </body>
 </html>
