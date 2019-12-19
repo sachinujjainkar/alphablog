@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
         @article=Article.new(article_params)
         @article.user=User.first
         if @article.save
-            flash[:notice] = "Saved sucessfully"
+            flash[:success] = "Saved sucessfully"
             redirect_to article_path(@article)
         else
             render 'new'
