@@ -12,12 +12,6 @@ class PagesController < ApplicationController
     def about
     end
 
-    # def abc
-    #    beta=params[:id]
-    #   # byebug
-    #    render json: {response => true, beta:beta}.to_json
-    # end
-
     def alpha
        # beta = params[:id],
         name=params[:first],

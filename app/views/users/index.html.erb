@@ -1,8 +1,26 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Users</h1>
-
-<table>
+<h1>Students</h1>
+<% @users.each do |user|%>
+ <div class="panel panel-primary">
+      <div class="panel-heading">
+        <nav class="nav">
+            <ul class="nav navbar-nav">
+              <li ><%= link_to 'Show', user %></li>
+              <li><%= link_to 'Edit', edit_user_path(user) %></li>
+              <li><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }%></td></li>
+            </ul>
+        </nav>
+      </div>
+      <div class="panel-body">
+        <label>Name: <%=user.username%></label>
+        <label>Email: <%=user.email%></label>
+        <label>Name: <%=user.firstname%></label>
+        <label>Email: <%=user.lastname%></label>
+        <label>Name: <%=user.prn_number%></label>
+      </div>
+  </div>
+<% end %>  
+<!-- <table>
   <thead>
     <tr>
       <th>Username</th>
@@ -25,7 +43,7 @@
     <% end %>
   </tbody>
 </table>
-
+ -->
 <br>
-
-<%= link_to 'New User', new_user_path %>
+<center><%= will_paginate @users, renderer: BootstrapPagination::Rails %></center>
+<%= link_to 'New Student', new_user_path %>
