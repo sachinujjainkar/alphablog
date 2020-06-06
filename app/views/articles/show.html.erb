@@ -1,9 +1,12 @@
-<div class="jumbotron jumbotron-fluid text-center">
+<div class="jumbotron1 text-center">
     <div class="container">
     
         <h3> <b><%=@article.title%> </b></h3>
-        
-        <p class="description"> <%=@article.description%> </p>
+        <div class="font-italic">
+          by <%= @article.user.username if @article.user %>
+        </div>
+        <p> <%= social_share_button_tag(@article.title) %></p>
+        <p class="description"> <%=@article.description.html_safe%> </p>
           <% if logged_in? && current_user == @article.user%>
               <%=link_to 'Edit', edit_article_path(@article),  class: "btn btn-xs btn-info" %>|  
               <%= link_to 'Delete', article_path(@article), method: :delete, 
@@ -11,6 +14,7 @@
               <%=link_to 'Back to Home',articles_path, class: "btn btn-xs btn-success" %>
 
           <% end %>
+          <br>
           <br>
           <%=link_to 'Show all Articles', articles_path(@article),  class: "btn btn-xs btn-primary" %>
     </div>
