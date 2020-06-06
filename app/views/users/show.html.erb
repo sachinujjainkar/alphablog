@@ -1,19 +1,9 @@
 <p id="notice"><%= notice %></p>
+<h1 class="text-center mt-4"><%= @user.username %>'s profile</h1>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+<center><%= gravatar_for @user, size: 200 %></center>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<h3 class="text-center mt-4">Articles</h3>
 
-<p>
-  <strong>Password :</strong>
-  <%= @user.password_digest%>
-</p>
+<%= render 'articles/article' %>
 
-<%= link_to 'Edit', edit_user_path(@user), class: "btn btn-xs btn-primary" %> |
-<%= link_to 'Back', users_path , class: "btn btn-xs btn-primary"%>
