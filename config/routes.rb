@@ -8,6 +8,11 @@ Rails.application.routes.draw do
 
   get 'signup', to: 'users#new'
 
+
+
+  post 'pages/alpha',to:'pages#alpha'
+  # get 'pages/alpha',to:'pages#alpha'
+  # # post 'abc', to: 'pages#abc'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout' , to: 'sessions#destroy'

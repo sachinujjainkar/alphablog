@@ -40,13 +40,14 @@ class ArticlesController < ApplicationController
         else
             render 'edit'
         end
+        
     
     end
 
 
     def show
-        #@article=Article.find(params[:id])
-
+        # #@article=Article.find(params[:id])
+        render json: @article
     end
 
 
@@ -75,6 +76,13 @@ class ArticlesController < ApplicationController
         end
     end
     
+    # def abc
+    #      render json: {response => response, form_id: '#myform'}.to_json
+    #      # render json: @article.to_json(only: [:title, :description])
+    #     # format.json {render :json => true}
+    # end
+
+
 
 end
 
