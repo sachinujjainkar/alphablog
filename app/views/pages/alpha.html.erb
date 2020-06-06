@@ -1,0 +1,36 @@
+
+
+# <form (:myForm) id="myForm"  method="POST" action="/pages/abc" >
+#             <label>Enter first name:</label>
+#             <input type="text" placeholder="FirstName" name="first" id="first" required/></br>
+#             <label>Enter last name:</label>
+#             <input type="text" placeholder="lastName" name="last" id="last" required/></br>
+#             <label>Email:</label>
+#             <input type="email" placeholder="email" name="email" required/></br>
+#             <button type="submit" id="submit">Submit</button>
+# </form>
+
+# <script>
+
+#   $(document).ready(function(){
+#     $('#submit').on("click", function(event) {
+#       event.preventDefault();
+#       # var formData = 
+#       #var formData = JSON.stringify($("#myForm").serializeArray());
+#       $.ajax({
+#       url:"/pages/abc",
+#       type: "POSTs",
+#       data: $('#myForm').serialize(),
+#       dataType: "json",
+#       success: function(response) {
+#           alert('successful');
+#         },
+#       error: function(response){
+#           alert('not done');
+#       }        
+#       });
+#  });
+# });
+#   </script>
+
+

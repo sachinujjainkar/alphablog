@@ -10,18 +10,28 @@
       </ul>
     </div>
   <% end %>
+  
+<div class="form-group">
+  <div class="control-label col-sm-2">
 
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
-  </div>
+      <div class="field">
+        <%= form.label :username %>
+        <%= form.text_field :username %>
+      </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
+      <div class="field">
+        <%= form.label :email %>
+        <%= form.text_field :email %>
+      </div>
 
-  <div class="actions">
-    <%= form.submit %>
+      <div class="field">
+      <%= form.label :password %>
+      <%= form.text_field :password %>
+    </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+  </div>      
