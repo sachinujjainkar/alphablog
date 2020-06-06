@@ -12,4 +12,9 @@ class User < ApplicationRecord
   
 
   has_secure_password 
+
+  VALID_PRN_REGEX = /\A(?=.*[a-z])[a-z\d]+\Z/i
+
+  validates :prn_number, presence: true , length: {maximum: 15}, uniqueness: { case_sensitive: true } , format: {with: VALID_PRN_REGEX }
+	
 end
