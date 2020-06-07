@@ -1,7 +1,36 @@
 <h2>Student's Corner</h2>
 <p>
+
 <button type="button" class="btn btn btn-block"><%=link_to "Create new Article", new_article_path %></button>
 </p>
-<%= render 'article' %>
 
+<div id="page-content">
+  <h2 class="text-center mt-3">Listing all articles</h2>
+  <div class="container">
+    <% @articles.each do |article| %>
+      <div class="row justify-content-md-center">
+        <div class="col-8 mt-4">
+          <div class="panel panel-success text-center shadow mb-5 bg-white rounded">
+            <div class="panel-heading font-italic">
+              by <%= article.user.username if article.user %>
+            </div>
+            <div class="panel-body">
+              <h5><%= link_to article.title, article_path(article)%></h5>
+              <p><%= truncate(article.description, length: 100) %></p>
+              <%= link_to "View", article_path(article), class: "btn btn-success" %>
+              <% if logged_in? && current_user == article.user%>
+                <%= link_to "Edit", edit_article_path(article), class: "btn btn-info" %>
+                <%= link_to "Delete", article_path(article), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+              <% end %>
               <%= link_to "Comment", comments_path(article), class: "btn btn-info" %>
+            </div>
+            <div class="panel-footer text-muted">
+              <small>Created <%= time_ago_in_words(article.created_at) %> ago, 
+                edited <%= time_ago_in_words(article.updated_at) %> ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
