@@ -6,6 +6,5 @@
 <button type="button" class="btn btn btn-block"><%=link_to "Create new Article", new_article_path %></button>
 <% end %>
 </p>
-
-
 <%= render 'article' %>
+<center><%= will_paginate @articles, renderer: BootstrapPagination::Rails %></center>

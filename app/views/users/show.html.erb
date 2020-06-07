@@ -1,9 +1,16 @@
 <p id="notice"><%= notice %></p>
 <h1 class="text-center mt-4"><%= @user.username %>'s profile</h1>
 
-<center><%= gravatar_for @user, size: 200 %></center>
-
-<h3 class="text-center mt-4">Articles</h3>
+<center><%= gravatar_for @user, size: 200 %>
+	<div class="panel-body">
+	    <label>Name: <%=@user.username%></label>
+	    <label>Email: <%=@user.email%></label>
+	    <label>Firstname: <%=@user.firstname%></label>
+	    <label>Lastname: <%=@user.lastname%></label>
+	    <label>PRN Number: <%=@user.prn_number%></label>
+	    <%= link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-xs btn-default'%>
+	</div>
+	  </div></center>
 
 <%= render 'articles/article' %>
-
+<center><%= will_paginate @articles, renderer: BootstrapPagination::Rails %></center>
