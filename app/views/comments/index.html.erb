@@ -15,7 +15,7 @@
               </p>
               comment by <%= comment.User.username %>
             </div>
-            <div class="panel-body">
+            <div class="panel-body text-left">
               <p><%= comment.description.html_safe %></p>
               <%= link_to "Show", comment, class: "btn btn-success" %>
               <% if logged_in? && current_user == comment.User%>

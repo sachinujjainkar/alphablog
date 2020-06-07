@@ -36,7 +36,6 @@ class ArticlesController < ApplicationController
 
     def update
         #@article=Article.find(params[:id])
-        byebug
         if @article.update(article_params)
             flash[:notice] = "updated sucessfully"
             redirect_to article_path(@article)
