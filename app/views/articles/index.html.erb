@@ -1,9 +1,8 @@
-<br>
-<br>
-<br>
 <p>
 <%if logged_in? %>
-<button type="button" class="btn btn btn-block"><%=link_to "Create new Article", new_article_path %></button>
+	<div style="margin-top: 10%">
+	  <button type="button" class="btn btn btn-block"><%=link_to "Create new Article", new_article_path %></button>
+	</div>
 <% end %>
 </p>
 <%= render 'article' %>
