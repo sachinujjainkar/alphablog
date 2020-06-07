@@ -3,3 +3,5 @@
 <button type="button" class="btn btn btn-block"><%=link_to "Create new Article", new_article_path %></button>
 </p>
 <%= render 'article' %>
+
+              <%= link_to "Comment", comments_path(article), class: "btn btn-info" %>
