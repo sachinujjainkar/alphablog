@@ -8,9 +8,9 @@
             <div class="panel-heading font-italic">
               by <%= article.user.username if article.user %>
             </div>
-            <div class="panel-body">
+            <div class="panel-body text-left">
               <h5><%= link_to article.title, article_path(article)%></h5>
-              <p><%= truncate(article.description, length: 100) %>to read more click on view</p>
+              <p><%= article.description.html_safe %><h5 style="color: blue;">to read more click on view<h5></p>
 
               <%= link_to "View", article_path(article), class: "btn btn-success" %>
               <% if logged_in? && current_user == article.user%>
