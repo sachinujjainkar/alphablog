@@ -8,7 +8,12 @@
           by <%= @article.user.username if @article.user %>
         </div>
         <p> <%= social_share_button_tag(@article.title) %></p></center>
-        <p class="description lead"> <%=@article.description.html_safe%> </p>
+        <p class="description"> <%=@article.description.html_safe%> </p>
+        <% if @article.avatar.attached? %>
+          <center><image src = "<%= (url_for(@article.avatar))%>" width="500" height="200"></center>
+            <br>
+        <% end %>
+        <div class="text-center">
           <% if logged_in? && current_user == @article.user%>
               <%=link_to 'Edit', edit_article_path(@article),  class: "btn btn-xs btn-info" %>|  
               <%= link_to 'Delete', article_path(@article), method: :delete, 
@@ -19,7 +24,7 @@
            <%=link_to 'Show all Articles', articles_path(@article),  class: "btn btn-xs btn-primary" %>
           <br>
           <br>
-         
+        </div> 
     </div>
 </div>
  <div class="panel-footer text-muted">

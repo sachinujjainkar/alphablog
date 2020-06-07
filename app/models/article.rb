@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-
+    has_one_attached :avatar
     belongs_to :user
     validates :title, presence: true, length: {minimum: 3, maximum: 50}
 
