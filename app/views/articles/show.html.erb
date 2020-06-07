@@ -1,7 +1,7 @@
 <br><br>
 
 <div class="jumbotron1">
-    <div class="container">
+    <div class="container col-md-12">
     
         <center><h3> <b><%=@article.title%> </b></h3>
         <div class="font-italic">
@@ -28,6 +28,6 @@
     </div>
 </div>
  <div class="panel-footer text-muted">
-      <small>Created <%= time_ago_in_words(@article.created_at) %> ago, 
+    <small>Created <%= time_ago_in_words(@article.created_at) %> ago, 
         edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
 </div>
