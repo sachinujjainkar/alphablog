@@ -20,6 +20,7 @@
             <div class="panel-body">
               <h5><%= link_to article.title, article_path(article)%></h5>
               <p><%= truncate(article.description, length: 100) %>to read more click on view</p>
+
               <%= link_to "View", article_path(article), class: "btn btn-success" %>
               <% if logged_in? && current_user == article.user%>
                 <%= link_to "Edit", edit_article_path(article), class: "btn btn-info" %>
