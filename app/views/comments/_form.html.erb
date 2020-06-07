@@ -1,3 +1,5 @@
+<%= tinymce %>
+
 <%= form_with(model: comment, local: true) do |form| %>
   <% if comment.errors.any? %>
     <div id="error_explanation">
@@ -12,12 +14,17 @@
   <% end %>
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, :class => "tinymce" %>
   </div>
 
   <div class="field">
     <%= form.label :User_id %>
     <%= form.text_field :User_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Article_id %>
+    <%= form.text_field :article_id %>
   </div>
 
   <div class="actions">

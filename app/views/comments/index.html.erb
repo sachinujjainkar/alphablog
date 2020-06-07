@@ -1,29 +1,40 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Comments</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div id="page-content">
+  <h2 class="text-center mt-3">Listing all comments</h2>
+  <div class="container">
     <% @comments.each do |comment| %>
-      <tr>
-        <td><%= comment.description %></td>
-        <td><%= comment.User %></td>
-        <td><%= link_to 'Show', comment %></td>
-        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="row justify-content-md-center">
+        <div class="col-8 mt-4">
+          <div class="panel panel-success text-center shadow mb-5 bg-white rounded">
+            <div class="panel-heading font-italic">
+              <p>
+                <strong>Article:</strong>
+                <%= comment.article.title %>
+              </p>
+              comment by <%= comment.User.username %>
+            </div>
+            <div class="panel-body">
+              <p><%= comment.description.html_safe %></p>
+              <%= link_to "Show", comment, class: "btn btn-success" %>
+              <% if logged_in? && current_user == comment.User%>
+                <%= link_to "Edit", edit_comment_path(comment), class: "btn btn-info" %>
+                <%= link_to "Destroy", class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+              <% end %>
+            </div>
+            <div class="panel-footer text-muted">
+              <small>Created <%= time_ago_in_words(comment.created_at) %> ago, 
+                edited <%= time_ago_in_words(comment.updated_at) %> ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+    <p>
+      <button type="button" class="btn btn btn-block"><%=link_to "New Comment", new_comment_path %>
+      </button>
+    </p>
+  </div>
+</div>
 
-<br>
-
-<%= link_to 'New Comment', new_comment_path %>
