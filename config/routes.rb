@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
 
   post 'pages/alpha',to:'pages#alpha'
+  get 'pages/about', to: 'pages#about'
   # get 'pages/alpha',to:'pages#alpha'
   # # post 'abc', to: 'pages#abc'
   get 'login', to: 'sessions#new'

@@ -9,8 +9,10 @@ class PagesController < ApplicationController
     def home
     end
 
-    def about
+    def about 
     end
+    def show
+    end    
 
     def alpha
        # beta = params[:id],
