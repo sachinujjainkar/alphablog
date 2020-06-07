@@ -1,12 +1,14 @@
-<div class="jumbotron1 text-center">
+<br><br>
+
+<div class="jumbotron1">
     <div class="container">
     
-        <h3> <b><%=@article.title%> </b></h3>
+        <center><h3> <b><%=@article.title%> </b></h3>
         <div class="font-italic">
           by <%= @article.user.username if @article.user %>
         </div>
-        <p> <%= social_share_button_tag(@article.title) %></p>
-        <p class="description"> <%=@article.description.html_safe%> </p>
+        <p> <%= social_share_button_tag(@article.title) %></p></center>
+        <p class="description lead"> <%=@article.description.html_safe%> </p>
           <% if logged_in? && current_user == @article.user%>
               <%=link_to 'Edit', edit_article_path(@article),  class: "btn btn-xs btn-info" %>|  
               <%= link_to 'Delete', article_path(@article), method: :delete, 
@@ -14,8 +16,13 @@
               <%=link_to 'Back to Home',articles_path, class: "btn btn-xs btn-success" %>
 
           <% end %>
+           <%=link_to 'Show all Articles', articles_path(@article),  class: "btn btn-xs btn-primary" %>
           <br>
           <br>
-          <%=link_to 'Show all Articles', articles_path(@article),  class: "btn btn-xs btn-primary" %>
+         
     </div>
+</div>
+ <div class="panel-footer text-muted">
+      <small>Created <%= time_ago_in_words(@article.created_at) %> ago, 
+        edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
 </div>

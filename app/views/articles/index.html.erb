@@ -1,11 +1,14 @@
-<h2>Student's Corner</h2>
+<br>
+<br>
+<br>
 <p>
-
+<%if logged_in? %>
 <button type="button" class="btn btn btn-block"><%=link_to "Create new Article", new_article_path %></button>
+<% end %>
 </p>
 
 <div id="page-content">
-  <h2 class="text-center mt-3">Listing all articles</h2>
+  <h2 class="text-center mt-3" style="color: rgb(0,0,128);text-decoration-style: solid;">Articles</h2>
   <div class="container">
     <% @articles.each do |article| %>
       <div class="row justify-content-md-center">
@@ -16,7 +19,7 @@
             </div>
             <div class="panel-body">
               <h5><%= link_to article.title, article_path(article)%></h5>
-              <p><%= truncate(article.description, length: 100) %></p>
+              <p><%= truncate(article.description, length: 100) %>to read more click on view</p>
               <%= link_to "View", article_path(article), class: "btn btn-success" %>
               <% if logged_in? && current_user == article.user%>
                 <%= link_to "Edit", edit_article_path(article), class: "btn btn-info" %>
