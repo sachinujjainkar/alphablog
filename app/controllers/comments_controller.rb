@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: [ :edit, :update, :destroy]
 
   # GET /comments
   # GET /comments.json
@@ -25,10 +25,9 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(comment_params)
-    
     if @comment.save
             flash[:success] = "Saved sucessfully"
-            redirect_to comment_path(@comment)
+            redirect_to articles_path
         else
             render 'new'
         end
@@ -78,4 +77,6 @@ class CommentsController < ApplicationController
     def comment_params
       params.require(:comment).permit(:description, :User_id, :article_id)
     end
+
+
 end

@@ -17,8 +17,26 @@
                   <%= link_to "Edit", edit_article_path(article), class: "btn btn-info" %>
                   <%= link_to "Delete", article_path(article), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
                 <% end %>
-                <%= link_to "Comment", comments_path(article), class: "btn btn-info" %>
-            </div>
+               <button type="button" class="btn btn-primary cus_btn" data-toggle="modal" data-target="#myModal_comment<%= article.id %>">Add Comment</button>
+
+                <div id="myModal_comment<%= article.id %>" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"> Add Comment</h4>
+                      </div>
+                      <div class="modal-body">
+                        <%@comment = Comment.new(article_id: article.id)%>
+                        <%= render :partial => '/comments/form', :locals => {:comment => @comment,:article_id => article.id } %>
+                      </div>  
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>  
             </div>
             <div class="panel-footer text-muted">
               <small>Created <%= time_ago_in_words(article.created_at) %> ago, 
@@ -30,3 +48,28 @@
     <% end %>
   </div>
 </div>
+
+<!-- <script type="text/javascript">
+  function add_comment(article_id)
+    {
+      var comment = document.getElementById("comment").value;
+      var user_id = <%= current_user.id %> ;
+      debugger;
+      if(comment == "")
+      {
+        alert("Please fill in the comment field");
+      }
+      else{
+        $.ajax({
+          type: 'get',
+          url: '/comments/addcomment',
+          data: { user_id: user_id, article_id: article_id, description: comment},
+          success: function (data) {
+            alert(data);
+            location.reload(); 
+            return false;
+          }
+        });
+      }
+    }
+</script> -->
