@@ -19,7 +19,11 @@
         <label>Firstname: <%=user.firstname%></label>
         <label>Lastname: <%=user.lastname%></label>
         <label>PRN Number: <%=user.prn_number%></label>
-        <label>Is Admin: <%=user.admin%></label>
+        <%if user.admin?%>
+          <label>Role: Teacher</label>
+        <%else%>
+          <label>Role: Student</label>
+        <%end%>  
       </div>
   </div>
 <% end %>  

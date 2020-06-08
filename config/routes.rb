@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
   post 'pages/alpha',to:'pages#alpha'
   get 'pages/about', to: 'pages#about'
+  get 'pages/aboutblog', to: 'pages#aboutblog'
   # get 'pages/alpha',to:'pages#alpha'
   # # post 'abc', to: 'pages#abc'
   get 'login', to: 'sessions#new'

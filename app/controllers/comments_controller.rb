@@ -25,9 +25,10 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(comment_params)
+    @article = Article.find(comment_params[:article_id])
     if @comment.save
             flash[:success] = "Saved sucessfully"
-            redirect_to articles_path
+            redirect_to article_path(@article)
         else
             render 'new'
         end

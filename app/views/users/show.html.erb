@@ -1,5 +1,4 @@
-
-<div style="margin-top: 10%">
+<div style="margin-top: 5px%">
 	<p id="notice"><%= notice %></p>
 	<h1 class="text-center mt-4"><%= @user.username %>'s profile</h1>
 
@@ -11,7 +10,9 @@
 		    <label>Lastname: <%=@user.lastname%></label>
 		    <label>PRN Number: <%=@user.prn_number%></label>
 		    <label>Is Admin: <%=@user.admin%></label>
+		    <%if current_user == @user || current_user.admin?%>
 		    <%= link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-xs btn-default'%>
+		    <%end%>
 		</div>
 		  </div></center>
 
