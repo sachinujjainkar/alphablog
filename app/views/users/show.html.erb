@@ -9,7 +9,11 @@
 		    <label>Firstname: <%=@user.firstname%></label>
 		    <label>Lastname: <%=@user.lastname%></label>
 		    <label>PRN Number: <%=@user.prn_number%></label>
-		    <label>Is Admin: <%=@user.admin%></label>
+		    <%if @user.admin?%>
+		    <label>Role: Teacher</label>
+		    <%else%>
+		    <label>Role: Student</label>
+		    <%end%>
 		    <%if current_user == @user || current_user.admin?%>
 		    <%= link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-xs btn-default'%>
 		    <%end%>
