@@ -73,7 +73,7 @@ class ArticlesController < ApplicationController
 
     def require_same_user 
         if current_user != @article.user
-            flash[:danger]="Only your contain is avilable for ths action"
+            flash[:danger]="Only your contain is avilable for this action"
             redirect_to root_path
         end
     end
