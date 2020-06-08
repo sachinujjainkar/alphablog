@@ -13,7 +13,7 @@
                 <strong>Article:</strong>
                 <%= comment.article.title %>
               </p>
-              comment by <%= comment.User.username %>
+              comment  <i class='fas fa-user'></i> <%= comment.User.username %>
             </div>
             <div class="panel-body text-left">
               <p><%= comment.description.html_safe %></p>
@@ -24,8 +24,8 @@
               <% end %>
             </div>
             <div class="panel-footer text-muted">
-              <small>Created <%= time_ago_in_words(comment.created_at) %> ago, 
-                edited <%= time_ago_in_words(comment.updated_at) %> ago</small>
+              <small><i class="fas fa-clock"></i> <%= time_ago_in_words(article.created_at) %> ago, 
+                <i class='fas fa-edit'></i> <%= time_ago_in_words(article.updated_at) %> ago</small>
             </div>
           </div>
         </div>
@@ -38,3 +38,4 @@
   </div>
 </div>
 
+<script src="https://kit.fontawesome.com/a076d05399.js"></script> 

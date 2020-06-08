@@ -6,11 +6,11 @@
         <div class="col-8 mt-4">
           <div class="panel panel-success text-center shadow mb-5 bg-white rounded">
             <div class="panel-heading font-italic">
-              by <%= article.user.username if article.user %>
+              <i class='fas fa-user'></i> <%= article.user.username if article.user %>
             </div>
             <div class="panel-body text-left">
-              <h5><%= link_to article.title, article_path(article)%></h5>
-              <p><%= article.description.html_safe %><h5 style="color: blue;">to read more click on view<h5></p>
+              <h3><%= link_to article.title, article_path(article)%></h3>
+              <p><%= article.description.html_safe %><h5 style="color: blue;">Click on VIEW to read more<h5></p>
               <div>
                 <%= link_to "View", article_path(article), class: "btn btn-success" %>
                 <% if logged_in? && current_user == article.user%>
@@ -21,8 +21,8 @@
             </div>
             </div>
             <div class="panel-footer text-muted">
-              <small>Created <%= time_ago_in_words(article.created_at) %> ago, 
-                edited <%= time_ago_in_words(article.updated_at) %> ago</small>
+              <small><i class="fas fa-clock"></i> <%= time_ago_in_words(article.created_at) %> ago, 
+                <i class='fas fa-edit'></i> <%= time_ago_in_words(article.updated_at) %> ago</small>
             </div>
           </div>
         </div>
@@ -30,3 +30,5 @@
     <% end %>
   </div>
 </div>
+
+
