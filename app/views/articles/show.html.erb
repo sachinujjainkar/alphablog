@@ -3,10 +3,13 @@
     <div class="container col-md-12">
     
         <center><h3> <b><%=@article.title%> </b></h3>
-        <div class="font-italic">
-          by <%= @article.user.username if @article.user %>
-        </div>
-        <p> <%= social_share_button_tag(@article.title) %></p></center>
+          <div class="font-italic">
+            by <%= @article.user.username if @article.user %>
+          </div>
+          <% if logged_in? && current_user == @article.user%>
+            <p> <%= social_share_button_tag(@article.title) %></p>
+          <%end%>
+        </center>
         <p class="description"> <%=@article.description.html_safe%> </p>
         <% if @article.avatar.attached? %>
           <center><image src = "<%= (url_for(@article.avatar))%>" width="500" height="200"></center>
