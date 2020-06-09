@@ -14,8 +14,10 @@
 		    <%else%>
 		    <label>Role: Student</label>
 		    <%end%>
+		    <%if logged_in?%>
 		    <%if current_user == @user || current_user.admin?%>
 		    <%= link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-xs btn-default'%>
+		    <%end%>
 		    <%end%>
 		</div>
 		  </div></center>
