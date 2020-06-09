@@ -50,30 +50,6 @@
   </div>
   <%else%>
    <h2 class="text-center mt-3" style="color: rgb(0,0,128);text-decoration-style: solid;">You have not added any article yet</h2>
+    <center><%=link_to "Create new Article", new_article_path , class: 'btn btn-primary' %></center>
   <%end%>
 </div>
-
-<!-- <script type="text/javascript">
-  function add_comment(article_id)
-    {
-      var comment = document.getElementById("comment").value;
-      var user_id = <%= current_user.id %> ;
-      debugger;
-      if(comment == "")
-      {
-        alert("Please fill in the comment field");
-      }
-      else{
-        $.ajax({
-          type: 'get',
-          url: '/comments/addcomment',
-          data: { user_id: user_id, article_id: article_id, description: comment},
-          success: function (data) {
-            alert(data);
-            location.reload(); 
-            return false;
-          }
-        });
-      }
-    }
-</script> -->
