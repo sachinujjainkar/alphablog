@@ -7,7 +7,7 @@
         <div class="col-8 mt-4">
           <div class="panel panel-success text-center shadow mb-5 bg-white rounded">
             <div class="panel-heading font-italic">
-              by <%= article.user.username if article.user %>
+              <i class='fas fa-user'>     </i> <%= article.user.username if article.user %>
             </div>
             <div class="panel-body text-left">
               <h5><%= link_to article.title, article_path(article)%></h5>
@@ -40,8 +40,7 @@
               </div>  
             </div>
             <div class="panel-footer text-muted">
-              <small>Created <%= time_ago_in_words(article.created_at) %> ago, 
-                edited <%= time_ago_in_words(article.updated_at) %> ago</small>
+              <small><i class="fas fa-clock">  </i> Created <%= time_ago_in_words(article.created_at) %> ago, <i class="fas fa-clock">  </i> edited <%= time_ago_in_words(article.updated_at) %> ago</small>
             </div>
           </div>
         </div>
@@ -53,3 +52,5 @@
     <center><%=link_to "Create new Article", new_article_path , class: 'btn btn-primary' %></center>
   <%end%>
 </div>
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
