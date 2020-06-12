@@ -24,8 +24,9 @@
               <% end %>
             </div>
             <div class="panel-footer text-muted">
-              <small><i class="fas fa-clock"></i> <%= time_ago_in_words(article.created_at) %> ago, 
+              <small><i class="fas fa-clock">  </i>Created <%= time_ago_in_words(comment.created_at) %> ago,<i class="fas fa-clock">  </i> 
                 <i class='fas fa-edit'></i> <%= time_ago_in_words(article.updated_at) %> ago</small>
+                
             </div>
           </div>
         </div>

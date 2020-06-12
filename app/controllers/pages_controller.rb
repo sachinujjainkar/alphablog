@@ -11,7 +11,8 @@ class PagesController < ApplicationController
 
     def about 
     end
-    def show
+
+    def aboutblog
     end    
 
     def alpha

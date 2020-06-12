@@ -1,4 +1,5 @@
 <div id="page-content">
+  <%if @articles.count > 0%>
   <h2 class="text-center mt-3" style="color: rgb(0,0,128);text-decoration-style: solid;">Articles</h2>
   <div class="container">
     <% @articles.each do |article| %>
@@ -6,7 +7,7 @@
         <div class="col-8 mt-4">
           <div class="panel panel-success text-center shadow mb-5 bg-white rounded">
             <div class="panel-heading font-italic">
-              <i class='fas fa-user'></i> <%= article.user.username if article.user %>
+              <i class='fas fa-user'>     </i> <%= article.user.username if article.user %>
             </div>
             <div class="panel-body text-left">
               <h3><%= link_to article.title, article_path(article)%></h3>
@@ -17,18 +18,39 @@
                   <%= link_to "Edit", edit_article_path(article), class: "btn btn-info" %>
                   <%= link_to "Delete", article_path(article), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
                 <% end %>
-                <%= link_to "Comment", comments_path(article), class: "btn btn-info" %>
-            </div>
+               <button type="button" class="btn btn-primary cus_btn" data-toggle="modal" data-target="#myModal_comment<%= article.id %>">Add Comment</button>
+
+                <div id="myModal_comment<%= article.id %>" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"> Add Comment</h4>
+                      </div>
+                      <div class="modal-body">
+                        <%@comment = Comment.new(article_id: article.id)%>
+                        <%= render :partial => '/comments/form', :locals => {:comment => @comment,:article_id => article.id } %>
+                      </div>  
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>  
             </div>
             <div class="panel-footer text-muted">
-              <small><i class="fas fa-clock"></i> <%= time_ago_in_words(article.created_at) %> ago, 
-                <i class='fas fa-edit'></i> <%= time_ago_in_words(article.updated_at) %> ago</small>
+              <small><i class="fas fa-clock">  </i> Created <%= time_ago_in_words(article.created_at) %> ago, <i class="fas fa-clock">  </i> edited <%= time_ago_in_words(article.updated_at) %> ago</small>
             </div>
           </div>
         </div>
       </div>
     <% end %>
   </div>
+  <%else%>
+   <h2 class="text-center mt-3" style="color: rgb(0,0,128);text-decoration-style: solid;">You have not added any article yet</h2>
+    <center><%=link_to "Create new Article", new_article_path , class: 'btn btn-primary' %></center>
+  <%end%>
 </div>
 
-
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>

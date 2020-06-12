@@ -1,4 +1,5 @@
 $navbar-default-bg: #08088A;
+$navbar-default-link-color: rgb(255,255,255);
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -23,6 +24,11 @@ $navbar-default-bg: #08088A;
     
     text-align: center;
     
+    }
+
+
+    .nav{
+    color:  rgb(255, 255, 255)
     }
     
     .jumbotron {
@@ -134,5 +140,8 @@ $navbar-default-bg: #08088A;
 
    ul,li{
 
-color: #ddd;   
+color: #ddd;  
+font-size: 15px; 
 }
+
+
