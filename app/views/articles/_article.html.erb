@@ -10,8 +10,8 @@
               <i class='fas fa-user'>     </i> <%= article.user.username if article.user %>
             </div>
             <div class="panel-body text-left">
-              <h4><%= link_to article.title, article_path(article)%></h4><br>
-              <p><%= article.description.html_safe %><h5 style="color: blue;">to read more click on view<h5></p>
+              <h3><%= link_to article.title, article_path(article)%></h3>
+              <p><%= article.description.html_safe %><h5 style="color: blue;">Click on VIEW to read more<h5></p>
               <div>
                 <%= link_to "View", article_path(article), class: "btn btn-success" %>
                 <% if logged_in? && current_user == article.user || current_user.admin.present? %>
