@@ -1,3 +1,4 @@
+
 <style>
         body {
             background: url(<%= asset_path '8BWvUj.jpg' %>);
@@ -50,7 +51,7 @@ body {
     margin-bottom: 20px;
   }
   size{
-  	height: 200px;
+    height: 200px;
   }
 }
 
@@ -68,46 +69,46 @@ body {
 <div class="row">
   <div class="column">
     <div class="card size">
-	<%= gravatar_for @user, size: 500%>
-	<br>
+  <%= gravatar_for @user, size: 500%>
+  <br>
     </div>
   </div>
 
   <div class="column2">
     <div class="card">
-    	<div class="row">
-    		<div class="column"><strong> <label>User Name:</label></strong></div>
-    		<div class="column"> <label><%=@user.username%></label></div>
-    	</div>
-    	<div class="row">
-    		<div class="column"><strong> <label>First Name:</label></strong></div>
-    		<div class="column">   <label>Firstname: <%=@user.firstname%></label>
+      <div class="row">
+        <div class="column"><strong> <label>User Name:</label></strong></div>
+        <div class="column"> <label><%=@user.username%></label></div>
+      </div>
+      <div class="row">
+        <div class="column"><strong> <label>First Name:</label></strong></div>
+        <div class="column">   <label>Firstname: <%=@user.firstname%></label>
          </div>
-    	</div>
-    	<div class="row">
-    		<div class="column"><strong> <label>Last Name:</label></strong></div>
-    		<div class="column"> <label><%=@user.lastname%></label></div>
-    	</div>
-    	<div class="row">
-    		<div class="column"><strong> <label>PRN Number:</label></strong></div>
-    		<div class="column"> <label><%=@user.prn_number%></label></div>
-    	</div>
-	    <%if @user.admin?%>
-		    <div class="row">
-	    		<div class="column"><strong> <label>Role:</label></strong></div>
-	    		<div class="column"> <label>Role: Teacher</label></div>
-	    	</div>
-      	<%else%>
-		    <div class="row">
-	    		<div class="column"><strong> <label>Role:</label></strong></div>
-	    		<div class="column"> <label>Role: Student</label></div>
-	    	</div>
-      	<%end%>
-      	<%if logged_in?%>
-      	<%if current_user == @user || current_user.admin?%>
-      	<%= link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-xs btn-default'%>
-      	<%end%>
-      	<%end%>
+      </div>
+      <div class="row">
+        <div class="column"><strong> <label>Last Name:</label></strong></div>
+        <div class="column"> <label><%=@user.lastname%></label></div>
+      </div>
+      <div class="row">
+        <div class="column"><strong> <label>PRN Number:</label></strong></div>
+        <div class="column"> <label><%=@user.prn_number%></label></div>
+      </div>
+      <%if @user.admin?%>
+        <div class="row">
+          <div class="column"><strong> <label>Role:</label></strong></div>
+          <div class="column"> <label>Role: Teacher</label></div>
+        </div>
+        <%else%>
+        <div class="row">
+          <div class="column"><strong> <label>Role:</label></strong></div>
+          <div class="column"> <label>Role: Student</label></div>
+        </div>
+        <%end%>
+        <%if logged_in?%>
+        <%if current_user == @user || current_user.admin?%>
+        <%= link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-xs btn-default'%>
+        <%end%>
+        <%end%>
     </div>
   </div>
   
@@ -119,7 +120,7 @@ body {
 
 
 
-	
-	<%= render 'articles/article' %>
-	<center><%= will_paginate @articles, renderer: BootstrapPagination::Rails %></center>
+  
+  <%= render 'articles/article' %>
+  <center><%= will_paginate @articles, renderer: BootstrapPagination::Rails %></center>
 </div>
