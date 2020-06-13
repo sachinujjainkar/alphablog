@@ -3,7 +3,7 @@
     <h3>Following error preventing the article from getting created </h3>
     <ul>
         <% @article.errors.full_messages.each do |msg| %>
-        <li style="color: red; align-items: center;"> <%= msg%> </li>
+        <li style="color: red;"> <%= msg%> </li>
         <% end %>
     </ul>
 <% end %>
