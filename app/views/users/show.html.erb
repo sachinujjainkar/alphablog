@@ -1,27 +1,126 @@
-<div style="margin-top: 5px%">
-	<p id="notice"><%= notice %></p>
-	<h1 class="text-center mt-4"><%= @user.username %>'s profile</h1>
 
-	<center><%= gravatar_for @user, size: 200 %>
-		<div class="panel-body">
-		    <label>Name: <%=@user.username%></label>
-		    <label>Email: <%=@user.email%></label>
-		    <label>Firstname: <%=@user.firstname%></label>
-		    <label>Lastname: <%=@user.lastname%></label>
-		    <label>PRN Number: <%=@user.prn_number%></label>
-		    <%if @user.admin?%>
-		    <label>Role: Teacher</label>
-		    <%else%>
-		    <label>Role: Student</label>
-		    <%end%>
-		    <%if logged_in?%>
-		    <%if current_user == @user || current_user.admin?%>
-		    <%= link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-xs btn-default'%>
-		    <%end%>
-		    <%end%>
-		</div>
-		  </div></center>
+<style>
+        body {
+            background: url(<%= asset_path '8BWvUj.jpg' %>);
+            background-size: cover;
+            }
+        
+        img { 
+          width: 140px; 
+          height: 140px; 
+        }
 
-	<%= render 'articles/article' %>
-	<center><%= will_paginate @articles, renderer: BootstrapPagination::Rails %></center>
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+.column2 {
+  float: left;
+  width: 75%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+  size{
+    height: 200px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  background-color: rgba(245, 245, 245, 0.8);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+</style>
+
+
+<div class="row">
+  <div class="column">
+    <div class="card size">
+  <%= gravatar_for @user, size: 500%>
+  <br>
+    </div>
+  </div>
+
+  <div class="column2">
+    <div class="card">
+      <div class="row">
+        <div class="column"><strong> <label>User Name:</label></strong></div>
+        <div class="column"> <label><%=@user.username%></label></div>
+      </div>
+      <div class="row">
+        <div class="column"><strong> <label>First Name:</label></strong></div>
+        <div class="column">   <label>Firstname: <%=@user.firstname%></label>
+         </div>
+      </div>
+      <div class="row">
+        <div class="column"><strong> <label>Last Name:</label></strong></div>
+        <div class="column"> <label><%=@user.lastname%></label></div>
+      </div>
+      <div class="row">
+        <div class="column"><strong> <label>PRN Number:</label></strong></div>
+        <div class="column"> <label><%=@user.prn_number%></label></div>
+      </div>
+      <%if @user.admin?%>
+        <div class="row">
+          <div class="column"><strong> <label>Role:</label></strong></div>
+          <div class="column"> <label>Role: Teacher</label></div>
+        </div>
+        <%else%>
+        <div class="row">
+          <div class="column"><strong> <label>Role:</label></strong></div>
+          <div class="column"> <label>Role: Student</label></div>
+        </div>
+        <%end%>
+        <%if logged_in?%>
+        <%if current_user == @user || current_user.admin?%>
+        <%= link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-xs btn-default'%>
+        <%end%>
+        <%end%>
+    </div>
+  </div>
+  
+  
+</div>
+
+
+
+
+
+
+  
+  <%= render 'articles/article' %>
+  <center><%= will_paginate @articles, renderer: BootstrapPagination::Rails %></center>
 </div>
