@@ -10,7 +10,7 @@
               <i class='fas fa-user'>     </i> <%= article.user.username if article.user %>
             </div>
             <div class="panel-body text-left">
-              <h3><%= link_to article.title, article_path(article)%></h3>
+              <h3><%= link_to article.title.titleize, article_path(article)%></h3>
               <p><%= article.description.html_safe %><h5 style="color: blue;">Click on VIEW to read more<h5></p>
               <div>
                 <%= link_to "View", article_path(article), class: "btn btn-success" %>
