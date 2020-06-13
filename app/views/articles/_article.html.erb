@@ -1,16 +1,16 @@
 <div id="page-content">
   <%if @articles.count > 0%>
-  <h2 class="text-center mt-3" style="color: rgb(0,0,128);text-decoration-style: solid;">Articles</h2>
+  <h2 class="text-center mt-3" style="color: #fff; text-decoration-style: solid;">Articles</h2>
   <div class="container">
     <% @articles.each do |article| %>
       <div class="row justify-content-md-center">
-        <div class="col-8 mt-4">
-          <div class="panel panel-success text-center shadow mb-5 bg-white rounded">
+        <div class="col-4 mt-2">
+          <div class="panel panel-info text-center shadow mb-5 bg-white rounded" style="width: 80%; margin-left: 100px;">
             <div class="panel-heading font-italic">
               <i class='fas fa-user'>     </i> <%= article.user.username if article.user %>
             </div>
             <div class="panel-body text-left">
-              <h5><%= link_to article.title, article_path(article)%></h5>
+              <h4><%= link_to article.title, article_path(article)%></h4><br>
               <p><%= article.description.html_safe %><h5 style="color: blue;">to read more click on view<h5></p>
               <div>
                 <%= link_to "View", article_path(article), class: "btn btn-success" %>
@@ -48,7 +48,7 @@
     <% end %>
   </div>
   <%else%>
-   <h2 class="text-center mt-3" style="color: rgb(0,0,128);text-decoration-style: solid;">You have not added any article yet</h2>
+   <h2 class="text-center mt-3" style="color: rgb(0,0,128);text-decoration-style: solid;">No article to show</h2>
     <center><%=link_to "Create new Article", new_article_path , class: 'btn btn-primary' %></center>
   <%end%>
 </div>
