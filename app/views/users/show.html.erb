@@ -97,11 +97,6 @@
         <label><strong> User Name:</strong></label>
         <label><strong> First Name:</strong></label>
         <label><strong> PRN Number:</strong></label>
-        <label><strong> DOB:</strong></label>
-        <label><strong> Gender:</strong></label>
-        <label><strong> Course:</strong></label>
-        <label><strong> Bio:</strong></label>
-
         <%if @user.admin?%>
         <strong> <label>Role:</label></strong>
         <%else%>
@@ -117,11 +112,6 @@
         <label><%=@user.username%></label>
         <label><%=@user.firstname%></label>
         <label><%=@user.prn_number%></label>
-        <label><%=@user.DOB%></label>
-        <label><%=@user.Gender%></label>
-        <label><%=@user.Course%></label>
-        <label><%=@user.Bio%></label>
-
         <%if @user.admin?%>
           <label>Teacher</label>
         <%else%>
@@ -131,7 +121,9 @@
         <label><%=@user.Gender%></label>
         <label><%=@user.Course%></label>
         
-              
+
+        
+            
      </div>
     </div>
     <div style="width: 35%">
