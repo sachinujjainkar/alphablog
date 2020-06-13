@@ -1,33 +1,54 @@
-<p id="notice"><%= notice %></p>
-<h1>Students</h1>
-<% @users.each do |user|%>
- <div class="panel panel-primary">
-      <div class="panel-heading">
-        <nav class="nav">
-            <ul class="nav navbar-nav">
-              <li ><%= link_to 'Show', user %></li>
-              <% if current_user.admin?%>
-              <li><%= link_to 'Edit', edit_user_path(user) %></li>
-              <li><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }%></td></li>
-              <%end%>
-            </ul>
-        </nav>
-      </div>
-      <div class="panel-body">
-        <label>Name: <%=user.username%></label>
-        <label>Email: <%=user.email%></label>
-        <label>Firstname: <%=user.firstname%></label>
-        <label>Lastname: <%=user.lastname%></label>
-        <label>PRN Number: <%=user.prn_number%></label>
-        <%if user.admin?%>
-          <label>Role: Teacher</label>
-        <%else%>
-          <label>Role: Student</label>
-        <%end%>  
-      </div>
-  </div>
-<% end %>  
 
-<br>
-<center><%= will_paginate @users, renderer: BootstrapPagination::Rails %></center>
-<%= link_to 'New Student',new_user_path, class:'btn btn-info' %>
+<head>
+   <style>
+        body {
+            background: url(<%= asset_path '8BWvUj.jpg' %>);
+            background-size: cover;
+            background-attachment: fixed;
+            }
+    </style> 
+
+</head>
+<body>  
+<div id="page-content">
+  <p id="notice"><%= notice %></p>
+  <h2 class="text-center mt-3" style="color:#fff; text-decoration-style: solid;">Students</h2>
+  <div class="container">
+    <% @users.each do |user|%>
+        <div class="col-8 mt-4" style="margin-left: 370px;">
+          <div class="panel panel-info shadow mb-5 bg-white rounded" style="width: 50%;">
+            <div class="panel-heading font-italic">
+              <nav class="nav">
+                  <ul class="nav navbar-nav">
+                    <li ><%= link_to 'Show', user %></li>
+                    <% if current_user.admin?%>
+                    <li><%= link_to 'Edit', edit_user_path(user) %></li>
+                    <li><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }%></td></li>
+                    <%end%>
+                  </ul>
+              </nav>
+            </div>
+            <div class="panel-body">
+              <label>Name: <%=user.username%></label>
+              <label>Email: <%=user.email%></label>
+              <label>Firstname: <%=user.firstname%></label>
+              <label>Lastname: <%=user.lastname%></label>
+              <label>PRN Number: <%=user.prn_number%></label>
+              <%if user.admin?%>
+                <label>Role: Teacher</label>
+              <%else%>
+                <label>Role: Student</label>
+              <%end%>  
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+  <center><%= will_paginate @users, renderer: BootstrapPagination::Rails %></center>
+  <center>  <%= link_to 'New Student',new_user_path, class:'btn btn-info' %>
+  </center>
+</div>
+</body>>
+<!-- ============================================================================ -->
+  <!-- Buttons to choose list or grid view -->
+  
