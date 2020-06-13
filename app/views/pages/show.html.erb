@@ -1,35 +1,57 @@
-<div style="margin-top: 5%">
-<center><h1 style="color: rgb(0,0,128); text-decoration: underline;">STUDENTS CORNER</h1></center>
+<style>
+        body {
+            background: url(<%= asset_path '8BWvUj.jpg' %>);
+            background-size: cover;
+            }
+        .card-block { 
+          background-color: rgba(245, 245, 245, 0.8); 
+          margin: 15px;
+          padding: 15px;
+        }
+
+        img { 
+          width: 100px; 
+          height: 100px; 
+        }
+
+
+</style> 
+
+
+<div class="card card-block text-dark">
+
+<center><%= image_tag("ab.png", :alt => "rss feed" , :class =>'img') %></center>
+<hr>
 <br>
-<br>
+  <div class="card-body ">
+  <p>‘StudentCorner’ is a web application. The main aim of this app is to provide the best way of communication and to provide our own unique platform for students and teachers to share thoughts, opinion, ideas. We can call it social media for our department.<p><br>
 
+  <strong>User Profile:</strong>
+  <p>In the User profile, the User can post thoughts, ideas as articles and can see others user’s posts as well. The User profile contains their Name, Contact details, and other necessary personal data, etc.</p>
 
-<p>‘StudentCorner’ is a web application. The main aim of this app is to provide the best way of communication and to provide our own unique platform for students and teachers to share thoughts, opinion, ideas. We can call it social media for our department.<p><br>
+  <p>Users need to sign-up first for using the platform. Then they can use the features of the application. For sign-up they need a Student ID and PRN number for uniqueness and other personal details to set up an account.</p><br>
 
-<strong>User Profile:</strong>
-<p>In the User profile, the User can post thoughts, ideas as articles and can see others user’s posts as well. The User profile contains their Name, Contact details, and other necessary personal data, etc.</p>
+  <strong>Posting an article:</strong>
+  <p>After creating an account, users need to login to the application. Then User can post an article easily by clicking on the create article button. For creating an article he/she needs to put a Title and article body also can add images for the post.</p><br>
 
-<p>Users need to sign-up first for using the platform. Then they can use the features of the application. For sign-up they need a Student ID and PRN number for uniqueness and other personal details to set up an account.</p><br>
+  <strong>Reading the article:</strong>
+  <p>Also, users can read the articles posted by another user. We have shown the article list at homepage itself. Also, a user can use the search feature to get the proper article of his choice.</p><br>
 
-<strong>Posting an article:</strong>
-<p>After creating an account, users need to login to the application. Then User can post an article easily by clicking on the create article button. For creating an article he/she needs to put a Title and article body also can add images for the post.</p><br>
+  <strong>Chatting feature:</strong>
+  <p>Here two or more users can chat with each other with the instant messaging feature of our app by creating rooms.</p><br>
 
-<strong>Reading the article:</strong>
-<p>Also, users can read the articles posted by another user. We have shown the article list at homepage itself. Also, a user can use the search feature to get the proper article of his choice.</p><br>
+  <strong>Reports for teacher:</strong>
 
-<strong>Chatting feature:</strong>
-<p>Here two or more users can chat with each other with the instant messaging feature of our app by creating rooms.</p><br>
+  <p>Teachers as an Admin can download the reports – like Students details, Article posted by specific user…etc.</p>
 
-<strong>Reports for teacher:</strong>
+  <hr>
+  <a href="http://www.nmu.ac.in/docs/en-us/home.aspx" active = "true" class="btn btn-block" style="color: blue">Click here to get more info about School of Computer Sciences, KBCNMU, Jalgaon</a>
+  <br>
+  <br>
+  </div>
+</div>
 
-<p>Teachers as an Admin can download the reports – like Students details, Article posted by specific user…etc.</p>
-
-
-<a href="http://www.nmu.ac.in/docs/en-us/home.aspx" active = "true" class="btn btn-primary btn-sm cus-btn">For SOCS Info visit official site</a>
-<br>
-<br>
-
-
+<div class="card card-block ">
 <div class="row">
   <div class="col-sm-3 text-center" style=" margin-left:130px; margin-right: 5px;">
   	<div class="panel panel-primary">
