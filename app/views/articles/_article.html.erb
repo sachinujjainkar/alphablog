@@ -1,6 +1,9 @@
 <div id="page-content">
   <%if @articles.count > 0%>
   <h2 class="text-center mt-3" style="color: #fff; text-decoration-style: solid;">Articles</h2>
+ <center>
+  <b><h4 style="color: yellow; text-decoration-style: solid;">Total:<%=@articles.count%></h4></b>
+ </center>
   <div class="container">
     <% @articles.each do |article| %>
       <div class="row justify-content-md-center">
