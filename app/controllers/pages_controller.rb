@@ -13,7 +13,9 @@ class PagesController < ApplicationController
     end
 
     def aboutblog
-    end    
+    end  
+    def tutorial
+    end  
 
     def alpha
        # beta = params[:id],
