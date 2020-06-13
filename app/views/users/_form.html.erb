@@ -79,6 +79,48 @@
         <%= form.password_field :password, class: "form-control", placeholder: "password", autofocus: true ,required: true%>
       </div>
   </div>
+  <%if !logged_in? %>
+    <div class="form-group">
+      <div class="control-label col-sm-2">
+          <%= form.label :Course, "Course" %>
+      </div>
+
+      <div class="col-sm-8">
+        <%= form.text_field :Course, class: "form-control", placeholder: "Course", autofocus: true ,required: true%>
+      </div>
+    </div>
+    <div class="form-group">
+        <div class="control-label col-sm-2">
+            <%= form.label :Gender, "Gender" %>
+        </div>
+
+        <div class="col-sm-3">
+          <%= radio_button_tag(:Gender, "male", checked = true) %><strong>  Male</strong>
+        </div>
+        <div class="col-sm-3">  
+          <%= radio_button_tag(:Gender, "female", checked = false) %>
+          <strong>  Female</strong>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="control-label col-sm-2">
+            <%= form.label :DOB, "Date Of Birth" %>
+        </div>
+
+        <div class="col-sm-8">
+          <%= form.text_field :DOB, class: "form-control", "data-provide" => 'datepicker', autofocus: true ,required: true%>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="control-label col-sm-2">
+            <%= form.label :Bio, "About Yourself" %>
+        </div>
+
+        <div class="col-sm-8">
+          <%= form.text_area :Bio, class: "form-control", placeholder: "About Yourself", autofocus: true%>
+        </div>
+    </div>
+  <%end%>
   <% if logged_in? %>
      <%if current_user.admin? %>
       <div class="form-group">
