@@ -22,15 +22,10 @@
     .column {
       float: left;
       width: 10%;
-      padding: 0 10px;
+      padding: 0 1px;
     }
 
-    .column2 {
-      float: left;
-      width: 75%;
-      padding: 0 10px;
-    }
-
+   
     /* Remove extra left and right margins, due to padding */
     .row {margin: 0 -5px;}
 
@@ -42,7 +37,7 @@
     }
 
     /* Responsive columns */
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 900px) {
       .column {
         width: 100%;
         display: block;
@@ -88,7 +83,13 @@
 
 <center>
 <div class="card" style="text-align: left">
-  <center><%= gravatar_for @user, size: 500%></center>
+  <center>
+    <h4>My Profile</h4>
+    <hr>
+    <%= gravatar_for @user, size: 500%>
+    <h4><b>Total Posts:<%=  @articles.count %> </b> </h4>    
+  </center>
+
   <div class="container">
     <div class="row">
       <div class="column">
@@ -100,6 +101,10 @@
         <%else%>
           <strong> <label>Role:</label></strong>
         <%end%>
+        <label><strong> DOB:</strong></label>
+        <label><strong> Gender:</strong></label>
+        <label><strong> Course:</strong></label>
+        <label><strong> About My Self:</strong></label>
       
       </div>
       <div class="column">
@@ -111,8 +116,15 @@
         <%else%>
           <label>Student</label>
         <%end%>
-      
+        <label><%=@user.DOB%></label>
+        <label><%=@user.Gender%></label>
+        <label><%=@user.Course%></label>
+        
+              
      </div>
+    </div>
+    <div style="width: 35%">
+      <%=@user.Bio%>
     </div>
   </div>
   <center>
