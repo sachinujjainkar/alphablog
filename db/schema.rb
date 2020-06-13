@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2020_06_13_123218) do
     t.string "firstname"
     t.string "lastname"
     t.string "prn_number"
-    t.string "DOB"
+    t.date "DOB"
     t.string "Gender"
     t.string "Course"
     t.string "Bio"
