@@ -1,8 +1,27 @@
-$navbar-default-bg: #08088A;
+$navbar-default-bg:     #8B008B;
 $navbar-default-link-color: rgb(255,255,255);
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.left{
+    margin-top: 180px;
+    float:left;
+    width: 500px;
+    font-family: 'Open Sans Regular';
+    text-align: center;
+    color: #fff;
+}
+.sign{
+    
+    background-color: #fff;
+    float: right;
+    width: 500px;
+    padding: 10px 5px 20px 30px;
+    border-radius: 5px;
+    align-item: center;
+}
+
 
 #logo{
     float: left;

@@ -1,5 +1,17 @@
-<center style="margin-top: 5%"><h1 style="color: rgb(0,0,128);">SignUp Form </h1></center>
+<!-- <center style="margin-top: 5%"><h1 style="color: rgb(0,0,128);">SignUp Form </h1></center> -->
+<div class="left">
+    <h1>Students Corener</h1>
+    <p>A platform where you can share your thoughts</p>
+ </div>
 
-<%= render 'form', user: @user %>
+<div class="sign">
+	<h3 align="center" style="margin-bottom: 10px; ">User Sign Up</h3>
+	<%= render 'form', user: @user %>
+	<span>Do you already have an account? </span><%= link_to 'Log In', login_path %>
+</div>
+
 <br><br><br>
+<!-- <div class="footer">
 <%= link_to 'Back', pages_path %>
+</div> -->
+

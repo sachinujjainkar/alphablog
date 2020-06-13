@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
       respond_to do |format|
         if @user.save
-          format.html { redirect_to @user }
+          format.html { redirect_to login_path }
           format.json { render :show, status: :created, location: @user }
         else
           format.html { render :new }

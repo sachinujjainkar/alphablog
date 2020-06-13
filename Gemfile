@@ -36,6 +36,7 @@ gem 'will_paginate-bootstrap'
 gem 'tinymce-rails'
 
 gem 'social-share-button'
+gem 'bootstrap', '~> 4.5.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
