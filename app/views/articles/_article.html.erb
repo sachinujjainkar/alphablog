@@ -14,7 +14,7 @@
               <p><%= article.description.html_safe %><h5 style="color: blue;">Click on VIEW to read more<h5></p>
               <div>
                 <%= link_to "View", article_path(article), class: "btn btn-success" %>
-                <% if logged_in? && current_user == article.user%>
+                <% if logged_in? && current_user == article.user || current_user.admin.present? %>
                   <%= link_to "Edit", edit_article_path(article), class: "btn btn-info" %>
                   <%= link_to "Delete", article_path(article), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
                 <% end %>
