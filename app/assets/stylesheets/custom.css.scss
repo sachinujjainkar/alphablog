@@ -1,11 +1,11 @@
-$navbar-default-bg:     #8B008B;
+$navbar-default-bg: #566d75;
 $navbar-default-link-color: rgb(255,255,255);
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 .left{
-    margin-top: 180px;
+    margin-top: 100px;
     float:left;
     width: 500px;
     font-family: 'Open Sans Regular';
@@ -13,11 +13,11 @@ $navbar-default-link-color: rgb(255,255,255);
     color: #fff;
 }
 .sign{
-    
+    font-family: 'Open Sans Regular';
     background-color: #fff;
     float: right;
     width: 500px;
-    padding: 10px 5px 20px 30px;
+    padding: 10px 10px 20px 30px;
     border-radius: 5px;
     align-item: center;
 }
@@ -47,7 +47,9 @@ $navbar-default-link-color: rgb(255,255,255);
 
 
     .nav{
-    color:  rgb(255, 255, 255)
+    color:  rgb(255, 255, 255);
+    font-family: 'Open Sans Regular';
+    font-style: bold;
     }
     
     .jumbotron {

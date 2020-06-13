@@ -11,15 +11,13 @@
     </div>
   <% end %>
   
-
- 
   <div class="form-group">
       <div class="control-label col-sm-2">
           <%= form.label :username, "Username" %>
       </div>
 
       <div class="col-sm-8">
-        <%= form.text_field :username, class: "form-control", placeholder: "Name", autofocus: true, required: true %>
+        <%= form.text_field :username, class: "form-control", placeholder: "Username", autofocus: true, required: true %>
       </div>
   </div>
 
@@ -29,7 +27,7 @@
       </div>
 
       <div class="col-sm-8">
-        <%= form.text_field :firstname, class: "form-control", placeholder: "firstname", autofocus: true, required: true %>
+        <%= form.text_field :firstname, class: "form-control", placeholder: "Firstname", autofocus: true, required: true %>
       </div>
   </div>
 
@@ -39,7 +37,7 @@
       </div>
 
       <div class="col-sm-8">
-        <%= form.text_field :lastname, class: "form-control", placeholder: "lastname", autofocus: true , required: true%>
+        <%= form.text_field :lastname, class: "form-control", placeholder: "Lastname", autofocus: true , required: true%>
       </div>
   </div>
   <% if !logged_in? %>
