@@ -1,3 +1,4 @@
+
 <%= tinymce %>
 <% if @article.errors.any?%>
     <h3>Following error preventing the article from getting created </h3>
@@ -7,9 +8,6 @@
         <% end %>
     </ul>
 <% end %>
-<br>
-<br>
-
 <%= form_with(model: @article, local: true,:html => {class: "form-horizontal", role: "form"}) do |form| %>
 <div class="form-group">
       <div class="control-label col-sm-2">

@@ -4,6 +4,10 @@ $navbar-default-link-color: rgb(255,255,255);
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body{
+    font-family: 'Open Sans Regular';
+}
+
 .left{
     margin-top: 100px;
     float:left;
@@ -20,6 +24,17 @@ $navbar-default-link-color: rgb(255,255,255);
     padding: 10px 10px 20px 30px;
     border-radius: 5px;
     align-item: center;
+}
+.articleform{
+
+    font-family: 'Open Sans Regular';
+    background-color: rgba(245, 245, 245, 0.8); 
+    width: 800px;
+    margin-left:155px; 
+    padding: 20px 10px 20px 30px;
+    border-radius: 5px;
+    align-item: center;
+    
 }
 
 
@@ -105,6 +120,7 @@ $navbar-default-link-color: rgb(255,255,255);
     border-top: 1px solid #eaeaea;
     
     color: #777;
+    
     
     }
     

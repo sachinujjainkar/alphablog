@@ -1,9 +1,23 @@
+<head>
+    <style>
+        body {
+            background: url(<%= asset_path '8BWvUj.jpg' %>);
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: 'Open Sans Regular';
+}
+            
+    </style>        
+</head>
+
+<body>
 <p>
 <%if logged_in? %>
-	<div style="margin-top: 10%">
-	  <button type="button" class="btn btn btn-block"><%=link_to "Create new Article", new_article_path %></button>
+	<div >
+	  <center><button type="button" class="btn btn btn-default"><%=link_to "Create new Article", new_article_path %></button></center>
 	</div>
 <% end %>
 </p>
 <%= render 'article' %>
 <center><%= will_paginate @articles, renderer: BootstrapPagination::Rails %></center>
+</body>
