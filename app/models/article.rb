@@ -5,6 +5,6 @@ class Article < ApplicationRecord
 
     validates :description, presence: true, length: {minimum: 10}
     validates :user_id, presence:true
-    has_many :comments, dependent: :destroy
+    # has_many :comments, dependent: :destroy
 
 end
