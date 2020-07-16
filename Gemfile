@@ -21,7 +21,7 @@ gem 'rails', '~> 5.2.4'
 #   gem 'sqlite3'
 # end
 
-gem 'sqlite3'
+gem 'pg'
 
 gem 'bcrypt','~> 3.1.7'
 # Use Puma as the app server
